@@ -1,0 +1,20 @@
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+server:
+    port: 7777
+spring:
+    application:
+        name: clouduser
+    cloud:
+        nacos:
+            discovery:
+                server-addr: ${spring.cloud.nacos.server-addr}
+            server-addr: localhost:8848
+        sentinel:
+            enabled: true
+            transport:
+                dashboard: localhost:8080
+                port: 8719
